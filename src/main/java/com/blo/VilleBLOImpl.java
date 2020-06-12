@@ -12,18 +12,23 @@ import com.dto.Ville;
 public class VilleBLOImpl implements VilleBLO {
 	@Autowired
 	private VilleDAO villeDAO;
-	
-	public ArrayList<Ville> getInfoVille() {
+
+	public ArrayList<Ville> getInfoVille(String param) {
 		ArrayList<Ville> ville = null;
-		ville = villeDAO.getInfoVille();
+		if (param != null) {
+			ville = villeDAO.getInfoVilles(param);
+		} else {
+			ville = villeDAO.getInfoVille();
+		}
 		return ville;
 	}
 
-	@Override
 	public void creerVille(Ville ville) {
 		villeDAO.setVille(ville);
 	}
 
-
+	public void mettreAJour(Ville ville) {
+		villeDAO.mettreAJour(ville);
+	}
 
 }

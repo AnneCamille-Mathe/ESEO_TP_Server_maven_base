@@ -36,18 +36,27 @@ class VilleController {
 			throws ClassNotFoundException, SQLException {
 		System.out.println("Appel GET");
 		System.out.println("param = " + monParam);
-		ArrayList<Ville> ville = villeService.getInfoVille();
+		ArrayList<Ville> ville = villeService.getInfoVille(monParam);
 		return ville;
 	}
 
 	// Methode POST
 	@RequestMapping(value = "/ville", method = RequestMethod.POST)
 	@ResponseBody
-	public ArrayList<Ville> appelPost(@RequestBody Ville ville)
-			throws ClassNotFoundException, SQLException {
+	public ArrayList<Ville> appelPost(@RequestBody Ville ville) throws ClassNotFoundException, SQLException {
 		System.out.println("Appel POST");
 		villeService.creerVille(ville);
-		ArrayList<Ville> ville1 =null;
+		ArrayList<Ville> ville1 = null;
+		return ville1;
+	}
+
+	// Methode PUT
+	@RequestMapping(value = "/ville", method = RequestMethod.PUT)
+	@ResponseBody
+	public ArrayList<Ville> appelGet(@RequestBody Ville ville) throws ClassNotFoundException, SQLException {
+		System.out.println("Appel GET");
+		villeService.mettreAJour(ville);
+		ArrayList<Ville> ville1 = null;
 		return ville1;
 	}
 
