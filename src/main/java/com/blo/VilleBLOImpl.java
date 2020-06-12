@@ -31,4 +31,8 @@ public class VilleBLOImpl implements VilleBLO {
 		villeDAO.mettreAJour(ville);
 	}
 
+	public void supprimerLigne(String code_commune_INSEE) {
+		villeDAO.supprimerLigne(code_commune_INSEE);
+	}
+
 }

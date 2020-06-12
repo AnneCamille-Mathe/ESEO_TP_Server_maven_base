@@ -97,4 +97,15 @@ public class VilleDAOImpl implements VilleDAO {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void supprimerLigne(String code_commune_INSEE) {
+		try {
+			Connection con = JDBCConfiguration.getonnexionBDD();
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate("DELETE FROM ville_france WHERE Code_commune_INSEE = '" + code_commune_INSEE + "'");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
