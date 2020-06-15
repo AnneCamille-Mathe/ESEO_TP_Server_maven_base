@@ -1,11 +1,6 @@
 package com.controller;
 
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.blo.VilleBLO;
 import com.dto.Ville;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 //import com.blo.VilleBLO;
 
