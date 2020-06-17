@@ -48,11 +48,9 @@ class VilleController {
 	// Methode PUT
 	@RequestMapping(value = "/ville", method = RequestMethod.PUT)
 	@ResponseBody
-	public ArrayList<Ville> appelGet(@RequestBody Ville ville) throws ClassNotFoundException, SQLException {
+	public void appelPut(@RequestBody Ville ville) throws ClassNotFoundException, SQLException {
 		System.out.println("Appel PUT");
 		villeService.mettreAJour(ville);
-		ArrayList<Ville> ville1 = null;
-		return ville1;
 	}
 
 	// Methode DELETE
